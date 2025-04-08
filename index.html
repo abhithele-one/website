@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,14 +7,129 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
   <link href="assets/img/log3.png" rel="icon">
 </head>
 <body style="padding: 0px; margin: 0px;">
-  <div>
-    <a href="index1.html">
-      <img style="display: flex; justify-items: center; align-items: center; background-size: contain; min-width: 100vw; height: 100vh; background-repeat: no-repeat;" src="https://storage.googleapis.com/shy-pub/370062/61gi9MDisWL_SX679_-1719775564884.jpeg" alt="">
+  <div  style="position: relative;">
+    <a href="home.html">
+      <img style="background-attachment: fixed; display: flex; justify-items: center; align-items: center; background-size: contain; min-width: 100vw; height: 100vh; background-repeat: no-repeat;" src="assets/img/landing.jpeg" alt="">
     </a>
+    <div style="position: absolute; color: #ffffff; top: 70%; display: flex; flex-direction: column; align-items: center;">
+      <p style="font-size: 24px;">Choose Language</p>
+      <div style="display: flex;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: #ffffff;"></div>
+        <div style="width: 2px;height: 10vh; background: #ffffff;"></div>
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: #ffffff;"></div>
+      </div>
+    </div>
   </div>
 </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuva Swabhiman Party</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  
+    <link href="assets/img/log3.png" rel="icon">    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/img/landing.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+
+        .content {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            max-width: 95%; 
+            font-size: calc(1rem + 1vw); 
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+        .circle:hover{
+          background-color: rgb(239, 175, 90);
+          color: rgb(102, 11, 11);
+          border: 2px solid black;
+        }
+        .container a{
+          text-decoration: none;
+          color: white;
+        }
+        .line {
+            width: 2px;
+            height: 10vh;
+            background: #ffffff;
+        }
+        @media (max-width: 768px) {
+            .content {
+                font-size: calc(1rem + 2vw); 
+            }
+            
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                font-size: calc(1rem + 3vw); 
+                padding: 15px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+      <h2>Yuva Swabhiman Party</h2>
+      <h5>Choose Language</h5>
+      <div class="container">
+        <a href="home1.html"><div class="circle" style="font-size: 48px;">म</div></a>
+        <div class="line"></div>
+        <a href="home.html"><div class="circle">E</div></a>
+    </div>
+    </div>
+</body>
 </html>
+
