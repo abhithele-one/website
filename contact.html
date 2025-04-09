@@ -145,36 +145,70 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                    </div>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <button type="submit">Send Message</button>
+                    </div>
                 </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
             </form>
-          </div><!-- End Contact Form -->
+        </div>
+        
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            // Initialize EmailJS with your user ID
+            emailjs.init("xZ_92R5dvtLRYKTj2");  // Replace with your EmailJS User ID
+        
+            // Handle form submission
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                event.preventDefault();  // Prevent the default form submission
+        
+                // Show the loading spinner and hide error/success messages
+                document.querySelector(".loading").style.display = "block";
+                document.querySelector(".error-message").style.display = "none";
+                document.querySelector(".sent-message").style.display = "none";
+        
+                // Collect form data
+                const formData = new FormData(this);
+        
+                // Prepare the email parameters
+                const emailParams = {
+                    from_name: formData.get("name"),
+                    from_email: formData.get("email"),
+                    subject: formData.get("subject"),
+                    message: formData.get("message")
+                };
+        
+                // Send the email using EmailJS
+                emailjs.send("service_ao0awri", "template_6bcwc4b", emailParams)  // Replace with your service and template ID
+                    .then(function(response) {
+                        document.querySelector(".loading").style.display = "none";
+                        document.querySelector(".sent-message").style.display = "block";
+                        console.log(response);
+                    }, function(error) {
+                        document.querySelector(".loading").style.display = "none";
+                        document.querySelector(".error-message").style.display = "block";
+                        console.error(error);
+                    });
+            });
+        </script>
+        
+        <!-- End Contact Form -->
 
         </div>
 
