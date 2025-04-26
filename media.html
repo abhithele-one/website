@@ -201,6 +201,9 @@
         <li class="nav-item" role="presentation">
           <a class="nav-link" id="videos-tab" data-bs-toggle="tab" href="#videos" role="tab" aria-controls="videos" aria-selected="false">Videos</a>
         </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="reels-tab" data-bs-toggle="tab" href="#reels" role="tab" aria-controls="reels" aria-selected="false">Reels</a>
+        </li>
       </ul>
 
       <div class="tab-content" id="mediaTabsContent">
@@ -215,6 +218,11 @@
         <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             <!-- JavaScript will insert the videos here -->
+          </div>
+        </div>
+        <div class="tab-pane fade" id="reels" role="tabpanel" aria-labelledby="reels-tab">
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <!-- JavaScript will insert the reels here -->
           </div>
         </div>
       </div>
@@ -483,71 +491,90 @@
       '/assets/img/rysp (1).mp4',
       '/assets/img/rr_video.mp4',
     ];
-  
+    const reelArray = [
+  '/assets/img/reel1.mp4',
+  '/assets/img/reel2.mp4',
+  '/assets/img/reel3.mp4',
+  // Add more reel videos here
+];
     function renderMedia() {
-      const imageContainer = document.querySelector('#images .isotope-container');
-      const videoContainer = document.querySelector('#videos .isotope-container');
+  const imageContainer = document.querySelector('#images .isotope-container');
+  const videoContainer = document.querySelector('#videos .isotope-container');
+  const reelContainer = document.querySelector('#reels .isotope-container'); // For Reels
   
-      // Clear previous content
-      imageContainer.innerHTML = '';
-      videoContainer.innerHTML = '';
+  // Clear previous content
+  imageContainer.innerHTML = '';
+  videoContainer.innerHTML = '';
+  reelContainer.innerHTML = ''; // Clear Reels container
   
-      // Render Images
-      imageArray.forEach(image => {
-        const portfolioItem = document.createElement('div');
-        portfolioItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
+  // Render Images
+  imageArray.forEach(image => {
+    const portfolioItem = document.createElement('div');
+    portfolioItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
+    
+    const img = document.createElement('img');
+    img.src = `assets/img/${image}.jpg`;
+    img.classList.add('img-fluid');
+    img.alt = image;
+
+    img.onclick = function () {
+      openModal(img.src);
+    };
+    
+    const portfolioInfo = document.createElement('div');
+    portfolioInfo.classList.add('portfolio-info');
+    
+    const h4 = document.createElement('h4');
+    h4.textContent = 'Photo';
+    
+    portfolioItem.appendChild(img);
+    portfolioItem.appendChild(portfolioInfo);
+    imageContainer.appendChild(portfolioItem);
+  });
   
-        const img = document.createElement('img');
-        img.src = `assets/img/${image}.jpg`;
-        img.classList.add('img-fluid');
-        img.alt = image;
+  // Render Videos
+  videoArray.forEach(src => {
+    const videoItem = document.createElement('div');
+    videoItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
+    
+    const video = document.createElement('video');
+    video.src = src;
+    video.controls = true;
+    video.classList.add('img-fluid');
+    
+    videoItem.appendChild(video);
+    videoContainer.appendChild(videoItem);
+  });
   
-        // Open image in fullscreen modal when clicked
-        img.onclick = function () {
-          openModal(img.src);
-        };
-  
-        const portfolioInfo = document.createElement('div');
-        portfolioInfo.classList.add('portfolio-info');
-  
-        const h4 = document.createElement('h4');
-        h4.textContent = 'Photo';
-  
-        const previewLink = document.createElement('a');
-        previewLink.href = `assets/img/${image}.jpg`;
-  
-        portfolioItem.appendChild(img);
-        portfolioItem.appendChild(portfolioInfo);
-        imageContainer.appendChild(portfolioItem);
-      });
-  
-      // Render Videos
-      videoArray.forEach(src => {
-        const videoItem = document.createElement('div');
-        videoItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
-  
-        const video = document.createElement('video');
-        video.src = src;
-        video.controls = true;
-        video.classList.add('img-fluid');
-  
-        videoItem.appendChild(video);
-        videoContainer.appendChild(videoItem);
-      });
-    }
-  
-    function openModal(src) {
+  // Render Reels (Mobile-Optimized)
+  reelArray.forEach(src => {
+    const reelItem = document.createElement('div');
+    reelItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
+    
+    const reel = document.createElement('video');
+    reel.src = src;
+    reel.controls = true;
+    reel.classList.add('img-fluid');
+    reel.style.width = '100%'; // Set the width to 100% for mobile compatibility
+    reel.style.height = 'auto'; // Maintain aspect ratio
+    
+    reelItem.appendChild(reel);
+    reelContainer.appendChild(reelItem);
+  });
+}
+
+function openModal(src) {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
-
+  
   modal.style.display = "block";
   modalImage.src = src;
-
+  
   const closeBtn = document.getElementById('modalClose');
   closeBtn.onclick = function () {
     modal.style.display = "none";
   };
-
+  
   window.onclick = function (event) {
     if (event.target === modal) {
       modal.style.display = "none";
@@ -555,8 +582,7 @@
   };
 }
 
-    
-    renderMedia();
+renderMedia();
   </script>
   
 
