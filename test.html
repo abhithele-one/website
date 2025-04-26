@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Images and Videos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .media {
+            width: 300px;
+            height: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Toggle Between Images and Videos</h1>
+
+    <button id="toggleButton">Show Videos</button>
+
+    <div id="content"></div>
+
+    <script>
+        const images = [
+            'https://via.placeholder.com/300x200.png?text=Image+1',
+            'https://via.placeholder.com/300x200.png?text=Image+2',
+            'https://via.placeholder.com/300x200.png?text=Image+3'
+        ];
+
+        const videos = [
+            'https://www.w3schools.com/html/mov_bbb.mp4',
+            'https://www.w3schools.com/html/movie.mp4'
+        ];
+
+        let showImages = true;
+
+        const contentDiv = document.getElementById('content');
+        const toggleButton = document.getElementById('toggleButton');
+
+        function loadMedia() {
+            contentDiv.innerHTML = '';
+            const mediaArray = showImages ? images : videos;
+
+            mediaArray.forEach(media => {
+                const mediaElement = document.createElement(showImages ? 'img' : 'video');
+                mediaElement.classList.add('media');
+                if (showImages) {
+                    mediaElement.src = media;
+                    mediaElement.alt = 'Image';
+                } else {
+                    mediaElement.src = media;
+                    mediaElement.controls = true;
+                }
+                contentDiv.appendChild(mediaElement);
+            });
+        }
+
+        toggleButton.addEventListener('click', () => {
+            showImages = !showImages;
+            toggleButton.textContent = showImages ? 'Show Videos' : 'Show Images';
+            loadMedia();
+        });
+
+        loadMedia();
+    </script>
+
+</body>
+</html>
