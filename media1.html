@@ -10,13 +10,13 @@
 
   <!-- Favicons -->
   <link href="assets/img/log3.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/help.jpgapple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -28,22 +28,141 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
 
-  <!-- =======================================================
-  * Template Name: Company
-  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+
+
+    #caption {
+      text-align: center;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #f6ab08;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .tab-content {
+      margin-top: 20px;
+    }
+
+    .modal-inner {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .modal-content {
+      max-width: 100%;
+      max-height: 100%;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 15%;
+      right: 1%;
+      background-color: #f6ab08;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .pagination{
+      margin: 15px;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+    }
+    .pagination-btn{
+      background-color: #f6ab08;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      width: 100px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .pagination-btn:hover {
+      background-color: #e29c06;
+    }
+    .modal-close-btn:hover {
+      background-color: #e29c06;
+    }
+
+
+    /* Center the tabs */
+    .nav-tabs {
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    /* Style for active tab */
+    .nav-tabs .nav-link.active {
+      background-color: #f6ab08;
+      color: white !important;
+    }
+
+    .nav-tabs .nav-link {
+      color: #f6ab08;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body class="portfolio-page">
 
+
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="home1.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <img style="height: 160px;" src="assets/img/log3.png" alt="">
@@ -52,37 +171,33 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="home1.html">मुख्यपृष्ठ<br></a></li>
-          <li><a href="about1.html">आमच्या विषयी</a></li>
-          <li><a href="media1.html">गॅलरी</a></li>
-      
-          <li><a href="trainers1.html" class="active">नेतृत्व</a></li>
+          <li><a href="home1.html">मुखपृष्ठ<br></a></li>
+          <li><a href="about1.html">आमच्याबद्दल</a></li>
+          <li><a href="media1.html" class="active">माध्यम</a></li>
+
+          <li><a href="trainers1.html">नेतृत्व</a></li>
           <li><a href="events1.html">घडामोडी</a></li>
-          
-          <li><a href="membership1.html">सदस्यता</a></li>
-      
+          <li><a href="membership1.html">सदस्यत्व</a></li>
+
           <li><a href="contact1.html">संपर्क</a></li>
-      </ul>
+        </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-       
 
     </div>
   </header>
 
   <main class="main">
 
-    <!-- Page Title -->
     <div class="page-title" data-aos="fade">
       <div class="heading">
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Media</h1>
-              <p class="mb-0">Yuva Swabhiman Party is dedicated to empowering youth, fostering social justice, and
-                creating a vibrant, inclusive future. Stay updated on our vision, activities, and initiatives through
-                our media page.</p>
+              <h1>माध्यम</h1>
+              <p class="mb-0">युवा स्वाभिमान पक्ष युवकांना सक्षम बनविण्यासाठी, सामाजिक न्यायाला चालना देण्यासाठी आणि
+एक उज्ज्वल, समावेशक भविष्य निर्माण करण्यासाठी समर्पित आहे. आमच्या मीडिया पेजद्वारे
+आमच्या दृष्टिकोनाबद्दल, उपक्रमांबद्दल आणि उपक्रमांबद्दल अपडेट रहा.</p>
             </div>
           </div>
         </div>
@@ -90,192 +205,66 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Media</li>
+            <li><a href="home1.html">मुखपृष्ठ</a></li>
+            <li class="current">माध्यम</li>
           </ol>
         </div>
       </nav>
     </div><!-- End Page Title -->
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <!-- Tabs for Images and Videos -->
+    <div class="container">
+      <ul class="nav nav-tabs" id="mediaTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="images-tab" data-bs-toggle="tab" href="#images" role="tab"
+            aria-controls="images" aria-selected="true">इमेजेस</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="videos-tab" data-bs-toggle="tab" href="#videos" role="tab" aria-controls="videos"
+            aria-selected="false">व्हिडिओ</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="reels-tab" data-bs-toggle="tab" href="#reels" role="tab" aria-controls="reels"
+            aria-selected="false">रील्स</a>
+        </li>
+      </ul>
 
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-
+      <div class="tab-content" id="mediaTabsContent">
+        <div class="tab-pane fade show active" id="images" role="tabpanel" aria-labelledby="images-tab">
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
-              </div>
-            </div><!-- End Portfolio Item -->
-
-
-
-          </div><!-- End Portfolio Container -->
-
+          </div>
         </div>
-
+        <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          </div>
+        </div>
+        <div class="tab-pane fade" id="reels" role="tabpanel" aria-labelledby="reels-tab">
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          </div>
+        </div>
       </div>
 
-    </section><!-- /Portfolio Section -->
+    </div>
+
+    <div class="pagination">
+      <button id="prevBtn" class="pagination-btn">मागे</button>
+      <span id="currentPage" style="padding: 10px; font-weight: 600;">1</span>
+      <button id="nextBtn" class="pagination-btn">पुढे</button>
+    </div>
 
   </main>
-
   <footer id="footer" class="footer position-relative light-background">
-
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Yuva Swabhiman Party</span>
+            <span class="sitename">युवा स्वाभिमान पार्टी</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>Yuva Swabhiman Party Office</p>
-            <p>Bhongade Complex, Rajapeth, Amravati.</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+91 98765 43210</span></p>
-            <p><strong>Email:</strong> <span>contact@yuvaswabhimanparty.com</span></p>
+            <p>युवा स्वाभिमान पार्टी कार्यालय</p>
+            <p>भोंगाडे कॉम्प्लेक्स, राजापेठ, अमरावती.</p>
+            <p class="mt-3"><strong>फोन:</strong> <span>+91 98342 58505</span></p>
+            <p><strong>ईमेल:</strong> <span>rashtriyayuwaswabhimanparty@gmail.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
             <a href="https://x.com/YuvaSwabhimaan"><i class="bi bi-twitter-x"></i></a>
@@ -284,56 +273,61 @@
             <a href=""><i class="bi bi-linkedin"></i></a> -->
           </div>
         </div>
+<div class="col-lg-2 col-md-3 footer-links">
+  <h4>उपयुक्त दुवे</h4>
+  <ul>
+    <li><a href="home.html">मुखपृष्ठ</a></li>
+    <li><a href="about.html">आमच्याबद्दल</a></li>
+    <li><a href="media.html">माध्यमे</a></li>
+    <li><a href="trainers.html">नेतृत्व</a></li>
+    <li><a href="events.html">कार्यक्रम</a></li>
+    <li><a href="membership.html">सदस्यत्व</a></li>
+    <li><a href="contact.html">संपर्क</a></li>
+  </ul>
+</div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="trainers.html">Leadership</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="membership.html">Membership</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our party!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
-        </div>
-
-      </div>
+<div class="col-lg-4 col-md-12 footer-newsletter">
+  <h4>आमचा वृत्तपत्र</h4>
+  <p>आमच्या पक्षासंबंधी नवीनतम बातम्या मिळवण्यासाठी आमच्या वृत्तपत्राची सदस्यता घ्या!</p>
+  <form action="forms/newsletter.php" method="post" class="php-email-form">
+    <div class="newsletter-form">
+      <input type="email" name="email" placeholder="तुमचा ईमेल">
+      <input type="submit" value="सदस्यता घ्या">
     </div>
+    <div class="loading">लोड होत आहे...</div>
+    <div class="error-message"></div>
+    <div class="sent-message">तुमचा सदस्यता विनंती पाठवण्यात आला आहे. धन्यवाद!</div>
+  </form>
+</div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Yuva Swabhiman Party</strong> <span>All Rights
-          Reserved</span></p>
-      <div class="credits" style="color: transparent;">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a style="color: transparent;" href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
-          style="color: transparent;" href=“https://themewagon.com>ThemeWagon
-      </div>
+</div>
+</div>
+
+<div class="container copyright text-center mt-4">
+  <p>© <span>सर्वाधिकार राखीव</span> <strong class="px-1 sitename">युवा स्वाभिमान पार्टी</strong></p>
+  <div class="credits" style="color: wheat;">
+    <!-- खालील दुवे कायम ठेवावेत. -->
+    <!-- तुम्ही प्रो आवृत्ती खरेदी केल्यास हे दुवे काढू शकता. -->
+    <!-- परवाना माहिती: https://bootstrapmade.com/license/ -->
+    <!-- प्रो आवृत्ती खरेदी करा: [buy-url] -->
+    डिझाईन केलेले <a style="color: wheat;" href="https://bootstrapmade.com/">BootstrapMade</a> द्वारे, वितरित <a
+      style="color: wheat;" href="https://themewagon.com">ThemeWagon</a> कडून.
+  </div>
+</div>
+
+
+    </div>
     </div>
 
   </footer>
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <div class="modal-inner">
+      <img class="modal-content" id="modalImage">
+      <button class="modal-close-btn" id="modalClose">✕ बंद करा</button>
+    </div>
+  </div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -347,6 +341,397 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    const imageArray = [
+      'rysp (183)', 'rysp (184)', 'rysp (187)', 'rysp (188)', 'rysp (189)', 'rysp (190)',
+      'rysp (193)', 'rysp (194)',
+      'rysp (195)', 'rysp (196)',
+      'rysp (199)', 'rysp (200)',
+      'rysp (201)', 'rysp (202)',
+      'rysp (205)', 'rysp (206)',
+      'rysp (207)', 'rysp (208)',
+      'rysp (211)', 'rysp (51)',
+      'rysp (52)', 'rysp (55)',
+      'rysp (56)', 'rysp (57)',
+      'rysp (60)', 'rysp (61)',
+      'rysp (64)', 'rysp (65)',
+      'rysp (66)', 'rysp (67)',
+      'rysp (94)', 'rysp (95)',
+      'rysp (98)', 'rysp (99)',
+      'rysp (102)', 'rysp (103)',
+      'rysp (106)', 'rysp (107)',
+      'rysp (110)', 'rysp (111)',
+      'rysp (114)', 'rysp (115)',
+      'rysp (118)', 'rysp (119)',
+      'rysp (122)', 'rysp (123)',
+      'rysp (126)', 'rysp (127)',
+      'rysp (130)', 'rysp (131)',
+      'rysp (134)', 'rysp (135)',
+      'rysp (138)', 'rysp (139)',
+      'rysp (142)', 'rysp (143)',
+      'rysp (146)', 'rysp (178)',
+      'rysp (212)', 'rysp (213)',
+      'rysp (216)', 'rysp (217)',
+      'rysp (220)', 'rysp (221)',
+      'rysp (224)', 'rysp (225)',
+      'rysp (228)', 'rysp (229)',
+      'rysp (232)', 'rysp (233)',
+      'rysp (236)', 'rysp (237)',
+      'rysp (240)', 'rysp (241)',
+      'rysp (244)', 'rysp (245)',
+      'rysp (248)', 'rysp (249)',
+      'rysp (252)', 'rysp (253)',
+      'rysp (256)', 'rysp (257)',
+      'rysp (260)', 'rysp (261)',
+      'rysp (264)', 'rysp (265)',
+      'rysp (268)', 'rysp (269)',
+      'rysp (272)', 'rysp (273)',
+      'rysp (276)', 'rysp (277)',
+      'rysp (280)', 'rysp (281)',
+      'rysp (284)', 'rysp (285)',
+      'rysp (288)', 'rysp (289)',
+      'rysp (292)', 'rysp (293)',
+      'rysp (296)', 'rysp (297)',
+      'rysp (300)', 'rysp (301)',
+      'rysp (304)', 'rysp (305)',
+      'rysp (308)', 'rysp (309)',
+      'rysp (312)', 'rysp (313)',
+      'rysp (316)', 'rysp (317)',
+      'rysp (320)', 'rysp (321)',
+      'rysp (324)', 'rysp (325)',
+      'rysp (328)', 'rysp (329)',
+      'rysp (332)', 'rysp (333)',
+      'rysp (336)', 'rysp (337)',
+      'rysp (340)', 'rysp (341)',
+      'rysp (344)', 'rysp (345)',
+      'rysp (348)', 'rysp (349)',
+      'rysp (352)', 'rysp (353)',
+      'rysp (356)', 'rysp (357)',
+      'rysp (360)', 'rysp (361)',
+      'rysp (364)', 'rysp (365)',
+      'rysp (368)', 'rysp (369)',
+      'rysp (372)', 'rysp (373)',
+      'rysp (376)', 'rysp (377)',
+      'rysp (380)', 'rysp (381)',
+      'rysp (384)', 'rysp (385)',
+      'rysp (388)', 'rysp (389)',
+      'rysp (392)', 'rysp (393)',
+      'rysp (396)', 'rysp (397)',
+      'rysp (400)', 'rysp (401)',
+      'rysp (404)', 'rysp (405)',
+      'rysp (408)', 'rysp (409)',
+      'rysp (412)', 'rysp (413)',
+      'rysp (416)', 'rysp (417)',
+      'rysp (420)', 'rysp (421)',
+      'rysp (424)', 'rysp (425)',
+      'rysp (428)', 'rysp (429)',
+      'rysp (432)', 'rysp (433)',
+      'rysp (436)', 'rysp (437)',
+      'rysp (440)', 'rysp (441)',
+      'rysp (444)', 'rysp (445)',
+      'rysp (448)', 'rysp (449)',
+      'rysp (452)', 'rysp (453)',
+      'rysp (456)', 'rysp (457)',
+      'rysp (460)', 'rysp (461)',
+      'rysp (464)', 'rysp (465)',
+      'rysp (468)', 'rysp (469)',
+      'rysp (472)', 'rysp (473)',
+      'rysp (476)', 'rysp (477)',
+      'rysp (480)', 'rysp (481)',
+      'rysp (484)', 'rysp (485)',
+      'rysp (488)', 'rysp (489)',
+      'rysp (492)', 'rysp (493)',
+      'rysp (496)', 'rysp (497)',
+      'rysp (500)', 'rysp (501)',
+      'rysp (504)', 'rysp (505)',
+      'rysp (508)', 'rysp (509)',
+      'rysp (512)', 'rysp (513)',
+      'rysp (516)', 'rysp (517)',
+      'rysp (520)', 'rysp (521)',
+      'rysp (524)', 'rysp (525)',
+      'rysp (528)', 'rysp (529)',
+      'rysp (532)', 'rysp (533)',
+      'rysp (536)', 'rysp (537)',
+      'rysp (540)', 'rysp (541)',
+      'rysp (544)', 'rysp (545)',
+      'rysp (548)', 'rysp (549)',
+      'rysp (552)', 'rysp (553)',
+      'rysp (556)', 'rysp (557)',
+      'rysp (560)', 'rysp (561)',
+      'rysp (564)', 'rysp (565)',
+      'rysp (568)', 'rysp (569)',
+      'rysp (572)', 'rysp (573)',
+      'rysp (576)', 'rysp (577)',
+      'rysp (580)', 'rysp (581)',
+      'rysp (584)', 'rysp (585)',
+      'rysp (588)', 'rysp (589)',
+      'rysp (592)', 'rysp (593)',
+      'rysp (596)', 'rysp (597)',
+      'rysp (600)', 'rysp (601)',
+      'rysp (604)', 'rysp (605)',
+      'rysp (608)', 'rysp (609)',
+      'rysp (612)', 'rysp (613)',
+      'rysp (616)', 'rysp (617)',
+      'rysp (620)', 'rysp (621)',
+      'rysp (624)', 'rysp (625)',
+      'rysp (628)', 'rysp (629)',
+      'rysp (632)', 'rysp (633)',
+      'rysp (636)', 'rysp (637)',
+      'rysp (640)', 'rysp (641)',
+      'rysp (644)', 'rysp (645)',
+      'rysp (648)', 'rysp (649)',
+      'rysp (652)', 'rysp (653)',
+      'rysp (656)', 'rysp (657)',
+      'rysp (660)', 'rysp (661)',
+      'rysp (664)', 'rysp (665)',
+      'rysp (668)', 'rysp (669)',
+      'rysp (672)', 'rysp (673)',
+      'rysp (676)', 'rysp (677)',
+      'rysp (680)', 'rysp (681)',
+      'rysp (684)', 'rysp (685)',
+      'rysp (688)', 'rysp (689)',
+      'rysp (692)', 'rysp (693)',
+      'rysp (696)', 'rysp (697)',
+      'rysp (700)', 'rysp (701)',
+      'rysp (704)', 'rysp (705)',
+      'rysp (708)', 'rysp (709)',
+      'rysp (712)', 'rysp (713)',
+      'rysp (716)', 'rysp (717)',
+      'rysp (720)', 'rysp (721)',
+      'rysp (724)', 'rysp (725)',
+      'rysp (728)', 'rysp (729)',
+      'rysp (732)', 'rysp (733)',
+      'rysp (736)', 'rysp (737)',
+      'rysp (740)', 'rysp (741)',
+      'rysp (744)', 'rysp (745)',
+      'rysp (748)', 'rysp (749)',
+      'rysp (752)', 'rysp (753)',
+      'rysp (756)', 'rysp (757)',
+      'rysp (760)', 'rysp (761)',
+      'rysp (764)', 'rysp (765)',
+      'rysp (768)', 'rysp (769)',
+      'rysp (772)', 'rysp (773)',
+      'rysp (776)', 'rysp (777)',
+      'rysp (780)', 'rysp (781)',
+      'rysp (784)', 'rysp (785)',
+      'rysp (788)', 'rysp (789)',
+      'rysp (792)', 'rysp (793)',
+      'rysp (796)', 'rysp (797)',
+      'rysp (800)', 'rysp (801)',
+      'rysp (804)', 'rysp (805)',
+      'rysp (808)', 'rysp (809)',
+      'rysp (812)', 'rysp (813)',
+      'rysp (816)', 'rysp (817)',
+      'rysp (820)', 'rysp (821)',
+      'rysp (824)', 'rysp (825)',
+      'rysp (828)', 'rysp (829)',
+      'rysp (832)', 'rysp (833)',
+      'rysp (836)', 'rysp (837)',
+      'rysp (840)', 'rysp (841)',
+      'rysp (844)', 'rysp (845)',
+      'rysp (848)', 'rysp (849)',
+      'rysp (852)', 'rysp (853)',
+      'rysp (856)', 'rysp (857)',
+      'rysp (860)', 'rysp (861)',
+      'rysp (864)', 'rysp (865)',
+      'rysp (868)', 'rysp (869)',
+      'rysp (872)', 'rysp (873)',
+      'rysp (876)', 'rysp (877)',
+      'rysp (880)', 'rysp (881)',
+      'rysp (884)', 'rysp (885)',
+      'rysp (888)', 'rysp (889)',
+      'rysp (892)', 'rysp (893)',
+      'rysp (896)', 'rysp (897)',
+      'rysp (900)', 'rysp (901)',
+      'rysp (904)', 'rysp (905)',
+      'rysp (908)', 'rysp (909)',
+      'rysp (912)', 'rysp (913)',
+      'rysp (916)', 'rysp (917)',
+      'rysp (920)', 'rysp (921)',
+
+    ];
+
+    const videoArray = [
+      '/assets/img/rr_video.mp4',
+      '/assets/img/rysp (1).mp4',
+      '/assets/img/rr_video.mp4',
+    ];
+
+    const reelArray = [
+      '/assets/img/reels/reel (1).mp4',
+      '/assets/img/reels/reel (2).mp4',
+      '/assets/img/reels/reel (3).mp4',
+      '/assets/img/reels/reel (4).mp4',
+      '/assets/img/reels/reel (5).mp4',
+      '/assets/img/reels/reel (6).mp4',
+      '/assets/img/reels/reel (7).mp4',
+      '/assets/img/reels/reel (8).mp4',
+      '/assets/img/reels/reel (9).mp4',
+      '/assets/img/reels/reel (10).mp4',
+      '/assets/img/reels/reel (11).mp4',
+      '/assets/img/reels/reel (12).mp4',
+      '/assets/img/reels/reel (13).mp4',
+      '/assets/img/reels/reel (14).mp4',
+      '/assets/img/reels/reel (15).mp4',
+      '/assets/img/reels/reel (16).mp4',
+
+
+      // Add more reel videos here
+    ];
+
+
+    const itemsPerPage = 12;
+    let currentPage = 1;
+
+    // Function to paginate the array into chunks of 12 items
+    function paginateArray(array) {
+      const totalPages = Math.ceil(array.length / itemsPerPage);
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = Math.min(startIndex + itemsPerPage, array.length);
+      return array.slice(startIndex, endIndex);
+    }
+
+    // Function to render media items for the current page
+    function renderMedia() {
+      const imageContainer = document.querySelector('#images .isotope-container');
+      const videoContainer = document.querySelector('#videos .isotope-container');
+      const reelContainer = document.querySelector('#reels .isotope-container');
+
+      const imagesToRender = paginateArray(imageArray);
+      const videosToRender = paginateArray(videoArray);
+      const reelsToRender = paginateArray(reelArray);
+
+      // Clear previous content
+      imageContainer.innerHTML = '';
+      videoContainer.innerHTML = '';
+      reelContainer.innerHTML = '';
+
+      // Render Images
+      imagesToRender.forEach(image => {
+        const portfolioItem = document.createElement('div');
+        portfolioItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
+
+        const img = document.createElement('img');
+        img.src = `assets/img/${image}.jpg`;
+        img.loading = 'lazy';
+        img.classList.add('img-fluid');
+        img.alt = image;
+
+        img.onclick = function () {
+          openModal(img.src);
+        };
+
+        const portfolioInfo = document.createElement('div');
+        portfolioInfo.classList.add('portfolio-info');
+
+        const h4 = document.createElement('h4');
+        h4.textContent = 'Photo';
+
+        portfolioItem.appendChild(img);
+        portfolioItem.appendChild(portfolioInfo);
+        imageContainer.appendChild(portfolioItem);
+      });
+
+      // Render Videos
+      videosToRender.forEach(src => {
+        const videoItem = document.createElement('div');
+        videoItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
+
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.classList.add('img-fluid');
+
+        videoItem.appendChild(video);
+        videoContainer.appendChild(videoItem);
+      });
+
+      // Render Reels
+      reelsToRender.forEach(src => {
+        const reelItem = document.createElement('div');
+        reelItem.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', 'isotope-item', 'filter-product');
+
+        const reel = document.createElement('video');
+        reel.src = src;
+        reel.controls = true;
+        reel.classList.add('img-fluid');
+        reel.style.width = '100%';
+        reel.style.height = 'auto';
+
+        reelItem.appendChild(reel);
+        reelContainer.appendChild(reelItem);
+      });
+
+      // Update pagination controls
+      updatePaginationControls();
+    }
+
+    // Function to update the pagination buttons (Previous/Next)
+    function updatePaginationControls() {
+      const totalPages = Math.ceil(imageArray.length / itemsPerPage);
+
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const currentPageSpan = document.getElementById('currentPage');
+
+      // Update page number
+      currentPageSpan.textContent = currentPage;
+
+      // Show/Hide Previous Button
+      prevBtn.disabled = currentPage === 1;
+
+      // Show/Hide Next Button
+      nextBtn.disabled = currentPage === totalPages;
+    }
+
+    // Function to go to the next page
+    function nextPage() {
+      const totalPages = Math.ceil(imageArray.length / itemsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderMedia();
+      }
+    }
+
+    // Function to go to the previous page
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        renderMedia();
+      }
+    }
+
+    // Open Modal for Images
+    function openModal(src) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+
+      modal.style.display = "block";
+      modalImage.src = src;
+
+      const closeBtn = document.getElementById('modalClose');
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+    }
+
+    // Initialize rendering
+    renderMedia();
+
+    // Set up event listeners for pagination buttons
+    document.getElementById('prevBtn').addEventListener('click', prevPage);
+    document.getElementById('nextBtn').addEventListener('click', nextPage);
+
+  </script>
+
+
 
 </body>
 
